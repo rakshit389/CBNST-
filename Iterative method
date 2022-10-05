@@ -1,0 +1,28 @@
+ #include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<stdlib.h>
+
+#define   f(x)   cos(x)-3*x+1
+#define   g(x)   (1+cos(x))/3
+
+int main()
+{ 
+    int step  =1 ;
+    float x0 , x1 , e ;
+    printf("Enter the intial value : ");
+    scanf("%f",&x0);
+    printf("\n Enter the tolerable value : ");
+    scanf("%f",&e);
+    printf("Step\t\tx0\tx1\n");
+    do
+    {
+        x1 = g(x0);
+        printf("%d\t\t%f\t%f\n" ,step,x0,x1);
+        x0 = x1 ;
+        step++;
+        
+    }while(fabs(f(x1))> e);
+    printf("%f",x1);
+    
+}
