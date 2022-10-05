@@ -1,0 +1,29 @@
+ #include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<stdlib.h>
+
+#define    f(x)    3*x - cos(x) -1
+#define   g(x)   3 + sin(x)
+
+int main()
+{ 
+    int step = 1 ;
+    float x0 , x1 , f0 , g0 , e ;
+    printf("Enter the intial value : ");
+    scanf("%f",&x0);
+    printf("\n Enter the tolerable value : ");
+    scanf("%f",&e);
+    printf("Step\t\tx0\tx1\n");
+    do
+    {
+        f0 = f(x0);
+        g0 = g(x0);
+        printf("%d\t\t,%f\t%f\n",step,x0,x1);
+        x1 = x0 - f0/g0 ;
+        x0 = x1 ;
+        step++;
+    }while(fabs(f(x1)) > e);
+    printf("Root is : %f",x1);
+    
+}
