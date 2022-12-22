@@ -14,14 +14,13 @@
     f1 = f(x1);
     if( f0 * f1 > 0)
     {
-        printf("Incorrect initial values \n");
+        printf("Invalid intervals\n");
         
     }
      printf("\nStep\t\tx0\t\tx1\t\tx2\t\tf(x2)\n");
      do
      {
-          x2 = x0 - (x0-x1) * f0/(f0-f1);
-         //x2 = ( (x1 - x0)/(f1 - f0 ) ) * f0 ;
+         x2 = x0 - (x0-x1) * f0/(f0-f1);
          f2 = f(x2);
          printf("%d\t\t%f\t%f\t%f\t%f\n",step,x0,x1,x2,f2);
          if( f0 * f2 > 0)
