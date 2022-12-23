@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n ;
+    printf("Enter number of data points :\n");
+    scanf("%d",&n);
+    
+    float X[n+1] , Y[n+1] ;
+    
+    printf("Enter data point x and y :\n");
+    for(  int i = 1 ; i <= n ; i++)
+    {
+        printf("Enter X[i] and Y[i] :\n");
+        scanf("%f%f",&X[i],&Y[i] );
+    }
+    
+    float sx = 0 , sy = 0 , sx2 = 0 , sxy = 0  ;
+    
+    for( int i = 0 ; i <= n ; i++)
+    {
+        sx = sx + X[i] ;
+        sy = sy + Y[i] ;
+        sx2 = sx2 + ( X[i]*X[i] ) ;
+        sxy = sxy + ( X[i]*Y[i] ) ;
+    }
+    
+    float a = (((sxy*sx) - (sy*sx2)) / ((sx*sx) - (n*sx2)));
+    float b = (((sy - (n*a)))/sx);
+    
+    printf("The equation of the Straight Line is \n");
+    printf("And the form of equation is y = a + b*x is\n");
+    printf("y = %0.4f + (%0.4f)*X", a, b);
+    
+    
+}
