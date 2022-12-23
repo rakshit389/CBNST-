@@ -17,7 +17,7 @@ int main()
     
     float sx = 0 , sy = 0 , sx2 = 0 , sxy = 0  ;
     
-    for( int i = 0 ; i <= n ; i++)
+    for( int i = 1 ; i <= n ; i++)
     {
         sx = sx + X[i] ;
         sy = sy + Y[i] ;
