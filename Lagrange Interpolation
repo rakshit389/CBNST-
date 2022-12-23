@@ -1,0 +1,39 @@
+ #include<stdio.h>
+int main()
+{
+    int  n ;
+    float s , t , x , y = 0.0 ;
+    printf("Enter the terms :\n");
+    scanf("%d",&n);
+    float X[n] , Y[n] ;
+    
+    printf("Enter the values of X :\n");
+    for( int i = 0 ; i < n ; i++)
+    {
+        scanf("%f",&X[i]);
+    }
+    printf("Enter the values of Y :\n");
+    for( int i = 0 ; i < n ; i++)
+    {
+        scanf("%f",&Y[i]);
+    }
+    
+    printf("Enter the value of x to find  y :\n");
+    scanf("%f",&x);
+    
+    for( int i = 0 ; i < n ; i++)
+    {
+        s = 1.0 ;
+        t = 1.0 ;
+        for( int j = 0 ; j < n ; j++)
+        {
+            if( i != j )
+            {
+                s = s* (x-X[j]) ;
+                t = t* (X[i]-X[j]);
+            }
+        }
+        y = y + (s/t)*Y[i] ;
+    }
+     printf("\nValue at X= %g is = %f", x,y);
+}
