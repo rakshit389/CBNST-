@@ -1,0 +1,33 @@
+#include<stdio.h>
+#define f(x) 1/x 
+int main()
+{
+    int n;
+    float i,a,b,sum=0,h;
+
+    printf("Enter Value of a and b\n");
+    scanf("%f%f",&a,&b);
+    printf("Enter no. of Intervals\n");
+    scanf("%d",&n);
+ 
+
+    h=(b-a)/n;
+    
+    sum = f(a) + f(b);
+    int term = 1 ;
+    for(i=a+h;i<b;i=i+h)
+    {
+       if( term % 3 == 0)
+         sum = sum + 2 * f(i);
+         
+       else
+         sum = sum + 3 * f(i); 
+        
+        term++ ;   
+    }
+    
+    sum = ( 3*h )/8 * sum;
+  
+    printf("\nValue of The integral  = %f",sum);    
+    
+}
